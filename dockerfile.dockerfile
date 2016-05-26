@@ -5,7 +5,7 @@ FROM ubuntu
 
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
-RUN apt-get update && apt-get install -y python=2.7.11
+RUN apt-get update && apt-get install -y python
 RUN pip install django
 RUN pip install psutil
 

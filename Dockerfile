@@ -5,10 +5,14 @@ FROM ubuntu
 
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
-RUN apt-get update && apt-get install -y python
+RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk
 RUN pip install django
 RUN pip install psutil
 
 COPY /CPUManage /opt/CPUManage
 
-CMD echo 'hello'
+EXPOSE 8000
+
+WORKDIR /opt/CPUManage
+
+CMD python manage.py runserver 0.0.0.0:8000 & python test.py

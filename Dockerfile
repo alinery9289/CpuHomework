@@ -5,7 +5,8 @@ FROM ubuntu
 
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
-RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk
+RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk 
+RUN apt-get install -y python-dev
 RUN pip install django
 RUN pip install setuptools
 COPY psutil-4.2.0.tar.gz /opt/psutil-4.2.0.tar.gz

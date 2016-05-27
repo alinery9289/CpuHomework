@@ -6,8 +6,8 @@ FROM ubuntu
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
 RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk
-RUN pip install django
-RUN pip install psutil
+RUN pip install --default-timeout=100 django
+RUN pip install --default-timeout=100 psutil
 
 COPY /CPUManage /opt/CPUManage
 

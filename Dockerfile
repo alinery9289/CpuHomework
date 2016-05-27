@@ -5,12 +5,9 @@ FROM ubuntu
 
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
-RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk
-RUN pip install --default-timeout=100 django
-RUN pip install wheel
-
-COPY psutil-4.2.0-cp27-cp27m-win_amd64.whl /opt/psutil-4.2.0-cp27-cp27m-win_amd64.whl
-RUN pip install /opt/psutil-4.2.0-cp27-cp27m-win_amd64.whl
+RUN add-apt-repository ppa:fkrull/deadsnakes-python2.7 && apt-get update && apt-get upgrade && apt-get install -y python-pip && apt-get install -y vim-gtk
+RUN pip install django
+RUN pip install psutil
 
 COPY /CPUManage /opt/CPUManage
 

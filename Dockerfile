@@ -5,9 +5,10 @@ FROM ubuntu
 
 MAINTAINER zhangxusheng sdzhangxusheng@163.com
 
-RUN add-apt-repository ppa:fkrull/deadsnakes-python2.7 && apt-get update && apt-get upgrade && apt-get install -y python-pip && apt-get install -y vim-gtk
+RUN apt-get update && apt-get install -y python-pip && apt-get install -y vim-gtk
 RUN pip install django
-RUN pip install psutil
+COPY psutil-4.2.0.tar.gz /opt/psutil-4.2.0.tar.gz
+RUN pip install /opt/psutil-4.2.0.tar.gz
 
 COPY /CPUManage /opt/CPUManage
 

@@ -1,0 +1,11 @@
+B:
+    image: "registry.aliyuncs.com/alinery9289/cpuhomework:latest"
+    ports:
+        - "8001:8000"
+    links:
+        - A
+
+A:
+    image: "registry.aliyuncs.com/alinery9289/cpuhomework:latest"
+    ports:
+        - "8000:8000"
